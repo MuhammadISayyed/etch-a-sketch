@@ -13,6 +13,10 @@ const createGrid = (gridsNumber) => {
       const gridBox = document.createElement("div");
       gridBox.classList.add("grid-box");
       row.appendChild(gridBox);
+
+      gridBox.addEventListener("mouseenter", () => {
+        gridBox.style.backgroundColor = "black";
+      });
     }
     container.appendChild(row);
   }
