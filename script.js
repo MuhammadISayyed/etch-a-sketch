@@ -1,4 +1,5 @@
 const container = document.createElement("div");
+const resetButton = document.querySelector("button");
 container.classList.add("container");
 document.body.appendChild(container);
 
@@ -21,5 +22,15 @@ const createGrid = (gridsNumber) => {
     container.appendChild(row);
   }
 };
+
+resetButton.addEventListener("click", () => {
+  let userSize = Number(
+    prompt("What dimensions do you want for the new grid?")
+  );
+  while (userSize > 100) {
+    userSize = Number(prompt("What dimensions do you want for the new grid?"));
+  }
+  createGrid(userSize);
+});
 
 createGrid(sizeOfGrid);
